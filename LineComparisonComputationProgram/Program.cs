@@ -19,23 +19,20 @@ namespace LineComparisonComputationProgram
             secondLine.PointValues();
             double secondLineLength = secondLine.GetLength();
             Console.WriteLine("Length of Second Line: " + secondLineLength);
-            int status = LengthComparison(firstLineLength, secondLineLength);
-            if (status > 0)
+            if (firstLineLength.CompareTo(secondLineLength) > 0)
             {
-                Console.WriteLine("Length Of First Line is greater ");
+                Console.WriteLine("Line1 is greater than Line2");
             }
-            else if (status < 0)
+            else if (firstLineLength.CompareTo(secondLineLength) == 0)
+
             {
-                Console.WriteLine("Length Of Second Line is greater");
+                Console.WriteLine("Lines are equal");
             }
             else
             {
-                Console.WriteLine("Length of both Lines are Equal");
+                Console.WriteLine("Line2 is greater than Line1");
             }
-        }
-        public static int LengthComparison(double firstLength, double secondLength)
-        {
-            return firstLength.CompareTo(secondLength);
+            Console.ReadLine();
         }
     }
 }
